@@ -6,8 +6,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Dark mode variant (Tailwind v4 style if supported) */
-@custom-variant dark (&:is(.dark *));
 
 /* =========================
    DESIGN TOKENS
