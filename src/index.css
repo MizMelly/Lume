@@ -1,0 +1,89 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode variant (Tailwind v4 style if supported) */
+@custom-variant dark (&:is(.dark *));
+
+/* =========================
+   DESIGN TOKENS
+========================= */
+
+:root {
+  --radius: 0.75rem;
+
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(1 0 0);
+
+  --card: oklch(0.178 0 0);
+  --card-foreground: oklch(1 0 0);
+
+  --primary: oklch(0.62 0.22 285);
+  --primary-foreground: oklch(1 0 0);
+
+  --secondary: oklch(0.22 0 0);
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.72 0.01 286);
+
+  --border: oklch(1 0 0 / 0.08);
+  --input: oklch(1 0 0 / 0.08);
+  --ring: oklch(0.62 0.22 285);
+
+  --gradient-glow: radial-gradient(circle at top, oklch(0.62 0.22 285 / 0.25), transparent 60%);
+  --shadow-glow: 0 20px 80px -20px oklch(0.62 0.22 285 / 0.5);
+}
+
+/* =========================
+   DARK MODE OVERRIDES
+========================= */
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+
+  --card: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.929 0.013 255.508);
+
+  --muted-foreground: oklch(0.704 0.04 256.788);
+
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+}
+
+/* =========================
+   BASE STYLES
+========================= */
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html,
+  body {
+    height: 100%;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+@layer utilities {
+  .glow-bg {
+    background: var(--gradient-glow);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+}
