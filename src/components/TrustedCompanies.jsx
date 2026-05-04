@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const companies = [
@@ -12,24 +11,27 @@ const companies = [
 
 const TrustedCompanies = () => {
   return (
-    <section className="py-14 border-b border-white/10 bg-black">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
+    <section className="py-10 sm:py-14 border-b border-white/10 bg-black">
 
-        {/* Small heading */}
-        <p className="text-xs tracking-[0.25em] uppercase text-white/50 mb-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+        {/* Heading */}
+        <p className="text-[10px] sm:text-xs tracking-[0.25em] uppercase text-white/50 mb-6 sm:mb-8">
           Trusted by teams at fast-growing companies
         </p>
 
         {/* Companies */}
-        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 text-2xl md:text-3xl font-semibold text-white/50">
+        <div className="flex flex-wrap justify-center items-center gap-x-6 sm:gap-x-10 gap-y-3 sm:gap-y-4 text-lg sm:text-2xl md:text-3xl font-semibold text-white/50">
+
           {companies.map((company, index) => (
             <div
               key={index}
-              className="hover:text-white/70 transition-colors duration-300"
+              className="cursor-default hover:text-white/80 transition-colors duration-300"
             >
               {company}
             </div>
           ))}
+
         </div>
 
       </div>
