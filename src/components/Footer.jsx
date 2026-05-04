@@ -2,19 +2,19 @@ import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="py-8 px-6 bg-black text-white border-t border-white/10">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="py-8 px-4 sm:px-6 bg-black text-white border-t border-white/10">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
 
         {/* Left */}
-        <div>
-          <h4 className="font-semibold">Lumen</h4>
-          <p className="text-white/50 text-sm">
+        <div className="space-y-1">
+          <h4 className="font-semibold text-sm sm:text-base">Lumen</h4>
+          <p className="text-white/50 text-xs sm:text-sm">
             © 2026 Lumen Inc. All rights reserved.
           </p>
         </div>
 
         {/* Right */}
-        <div className="flex items-center gap-5 text-white/60 text-lg">
+        <div className="flex items-center gap-6 text-white/60 text-base sm:text-lg">
           <a href="#" className="hover:text-[#7C5CFF] transition">
             <FaTwitter />
           </a>

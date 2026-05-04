@@ -44,102 +44,109 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="relative py-28 px-6 bg-[#050505] text-white overflow-hidden border-t border-white/5">
-      
-      {/* Purple ambient glow */}
+    <section
+      id="pricing"
+      className="relative py-20 md:py-28 px-4 bg-[#050505] text-white overflow-hidden border-t border-white/5"
+    >
+      {/* Glow */}
       <div className="absolute inset-0 pointer-events-none flex justify-center">
-        <div className="absolute top-20 w-[900px] h-[900px] bg-[#7C5CFF]/10 blur-[220px] rounded-full"></div>
+        <div className="absolute top-24 w-[800px] h-[800px] bg-[#7C5CFF]/10 blur-[200px] rounded-full"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto text-center">
-        
-        {/* Section Header */}
-    
-        <h5 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
-          Simple, scalable pricing
-        </h5>
+      <div className="relative max-w-6xl mx-auto text-center">
 
-        <p className="text-lg md:text-xl text-white/60 mb-16 max-w-2xl mx-auto">
+        {/* Heading */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+          Simple, scalable pricing
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-white/60 mt-3 text-sm sm:text-base md:text-lg">
           Start free. Upgrade when you're ready.
         </p>
 
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Cards */}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+
           {plans.map((plan, index) => (
             <div
               key={index}
               className={`
-                relative rounded-[32px] p-8 text-left
-                border backdrop-blur-xl transition-all duration-500
+                relative flex flex-col justify-between
+                rounded-2xl p-7 text-left
+                border transition-all duration-300
                 ${
                   plan.popular
-                    ? "border-[#7C5CFF]/40 bg-white/[0.04] shadow-[0_25px_80px_rgba(124,92,255,0.18)] scale-[1.03]"
-                    : "border-white/10 bg-white/[0.02] hover:border-[#7C5CFF]/25"
+                    ? "border-[#7C5CFF] bg-[#0B0B0F] shadow-[0_0_60px_rgba(124,92,255,0.18)] scale-[1.02]"
+                    : "border-white/10 bg-[#0A0A0A] hover:border-white/20"
                 }
               `}
             >
-              
-              {/* Popular Badge */}
+
+              {/* ⭐ CENTER BADGE (MATCH IMAGE) */}
               {plan.popular && (
-                <div className="absolute top-6 right-6 px-3 py-1 rounded-full text-xs font-semibold bg-[#7C5CFF]/15 text-[#C4B5FD] border border-[#7C5CFF]/20">
-                  Most popular
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <span className="px-4 py-1 text-xs rounded-full bg-[#7C5CFF] text-white shadow-md">
+                    Most popular
+                  </span>
                 </div>
               )}
 
-              {/* Plan Name */}
-              <h3 className="text-2xl font-semibold mb-2">
-                {plan.name}
-              </h3>
+              {/* Top Content */}
+              <div>
 
-              {/* Subtitle */}
-              <p className="text-white/50 mb-8 leading-relaxed">
-                {plan.subtitle}
-              </p>
+                <h3 className="text-xl font-semibold">{plan.name}</h3>
 
-              {/* Price */}
-              <div className="mb-8 flex items-end gap-2">
-                <span className="text-5xl font-bold tracking-tight">
-                  {plan.price}
-                </span>
-                {plan.period && (
-                  <span className="text-white/50 text-lg mb-1">
-                    {plan.period}
+                <p className="text-white/50 text-sm mt-2">
+                  {plan.subtitle}
+                </p>
+
+                {/* Price */}
+                <div className="mt-6 flex items-end gap-2">
+                  <span className="text-4xl font-bold">
+                    {plan.price}
                   </span>
-                )}
+                  {plan.period && (
+                    <span className="text-white/50 mb-1">
+                      {plan.period}
+                    </span>
+                  )}
+                </div>
+
+                {/* Features */}
+                <ul className="mt-6 space-y-3">
+                  {plan.features.map((feature, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center gap-3 text-white/70 text-sm"
+                    >
+                      <Check size={18} className="text-[#7C5CFF]" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
               </div>
 
-              {/* Features */}
-              <ul className="space-y-4 mb-10">
-                {plan.features.map((feature, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 text-white/75"
-                  >
-                    <Check
-                      size={18}
-                      className="text-[#7C5CFF] flex-shrink-0"
-                    />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA */}
+              {/* Button */}
               <button
                 className={`
-                  w-full py-4 rounded-2xl font-semibold transition-all duration-300
+                  mt-10 w-full py-3 rounded-xl font-semibold transition
                   ${
                     plan.popular
-                      ? "bg-gradient-to-r from-[#7C5CFF] to-[#9A7CFF] text-white shadow-[0_12px_35px_rgba(124,92,255,0.35)] hover:scale-[1.02]"
-                      : "border border-white/10 bg-white/[0.02] text-white hover:bg-white/[0.04]"
+                      ? "bg-[#7C5CFF] hover:bg-[#8b6bff]"
+                      : "bg-white/5 border border-white/10 hover:bg-white/10"
                   }
                 `}
               >
                 Get started
               </button>
+
             </div>
           ))}
+
         </div>
+
       </div>
     </section>
   );
