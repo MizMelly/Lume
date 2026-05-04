@@ -60,11 +60,11 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* ✅ MOBILE MENU (SEPARATE LAYER — FIXED STRUCTURE) */}
+      {/* ✅ MOBILE MENU (FIXED SPACING) */}
       {open && (
         <div className="fixed inset-0 z-[999] bg-black/95 backdrop-blur-xl">
 
-          {/* close button */}
+          {/* Close Button */}
           <button
             onClick={() => setOpen(false)}
             className="absolute top-6 right-6 text-white"
@@ -72,18 +72,30 @@ const Navbar = () => {
             <X size={28} />
           </button>
 
-          {/* menu */}
-          <div className="h-full flex flex-col items-center justify-center gap-8">
+          {/* Menu Content */}
+          <div className="flex flex-col items-center pt-24 sm:pt-28 gap-10">
 
-            <a onClick={() => setOpen(false)} href="#" className="text-lg text-[#A1A1AA] hover:text-white">
+            <a
+              onClick={() => setOpen(false)}
+              href="#"
+              className="text-lg text-[#A1A1AA] hover:text-white"
+            >
               Features
             </a>
 
-            <a onClick={() => setOpen(false)} href="#pricing" className="text-lg text-[#A1A1AA] hover:text-white">
+            <a
+              onClick={() => setOpen(false)}
+              href="#pricing"
+              className="text-lg text-[#A1A1AA] hover:text-white"
+            >
               Pricing
             </a>
 
-            <a onClick={() => setOpen(false)} href="#dashboardsection" className="text-lg text-[#A1A1AA] hover:text-white">
+            <a
+              onClick={() => setOpen(false)}
+              href="#dashboardsection"
+              className="text-lg text-[#A1A1AA] hover:text-white"
+            >
               Product
             </a>
 
